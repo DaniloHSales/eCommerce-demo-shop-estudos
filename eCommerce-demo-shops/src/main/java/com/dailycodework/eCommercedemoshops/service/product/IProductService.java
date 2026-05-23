@@ -1,16 +1,18 @@
 package com.dailycodework.eCommercedemoshops.service.product;
 
 import com.dailycodework.eCommercedemoshops.model.Product;
+import com.dailycodework.eCommercedemoshops.requests.AddProductRequests;
+import com.dailycodework.eCommercedemoshops.requests.ProductUpdateRequest;
 
 import java.util.List;
 
 public interface IProductService {
 
-        Product addProduct(Product product);
+        Product addProduct(AddProductRequests product);
 
         Product getProductById(Long id);
         void deleteProductById(Long id);
-        void updateProductById(Product product, Long productId);
+        Product updateProductById(ProductUpdateRequest product, Long productId);
 
         List<Product> getAllProducts();
         List<Product> getProductsByCategory(String category);
@@ -20,6 +22,5 @@ public interface IProductService {
         List<Product> getProductsByBrandAndName(String category, String name);
 
         Long countProductsByBrandAndName(String brand, String name);
-
 
 }

@@ -12,12 +12,10 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String name;
     private String brand;
@@ -34,10 +32,13 @@ public class Product {
     private List<Image> images;
 
 
-
-
-
-
-
-
+    public Product(String brand, String name, BigDecimal price,
+                   String description, int inventory, Category category) {
+        this.brand = brand;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.inventory = inventory;
+        this.category = category;
+    }
 }
